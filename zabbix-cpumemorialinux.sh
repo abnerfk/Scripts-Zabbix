@@ -15,4 +15,5 @@ elif [ 'grep -w "Timeout=3" /etc/zabbix/zabbix_agentd.conf']; then
 fi
   echo "UserParameter=discovery.processosmemoria.linux[*],/bin/bash /home/scripts/discovertop5memory.sh $1 $2" >> /etc/zabbix/zabbix_agentd.conf
   echo "UserParameter=discovery.processoscpu.linux[*],/bin/bash /home/scripts/discovertop5cpu.sh $1" >> /etc/zabbix/zabbix_agentd.conf
+  echo "UserParameter=sessions.active,/bin/bash /home/scripts/sessions.sh" >> /etc/zabbix/zabbix_agentd.conf
   systemctl restart zabbix-agent;
