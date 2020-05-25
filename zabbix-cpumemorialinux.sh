@@ -5,7 +5,7 @@ chmod 744 /home/scripts
 cd /home/scripts
 wget https://raw.githubusercontent.com/abnerfk/Scripts-Zabbix/master/discovertop5cpu.sh
 wget https://raw.githubusercontent.com/abnerfk/Scripts-Zabbix/master/discovertop5memory.sh
-wget https://github.com/abnerfk/Scripts-Zabbix/blob/master/sessions.sh
+wget https://raw.githubusercontent.com/abnerfk/Scripts-Zabbix/master/sessions.sh
 chmod 744 *
 chown zabbix:zabbix *
 if [ 'grep -w "# Timeout=3" /etc/zabbix/zabbix_agentd.conf' ]; then
