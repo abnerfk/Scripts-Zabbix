@@ -8,9 +8,9 @@
 #wget https://raw.githubusercontent.com/abnerfk/Scripts-Zabbix/master/sessions.sh
 #chmod 744 *
 #chown zabbix:zabbix *
-if [ "grep -w "# Timeout=3" /etc/zabbix/zabbix_agentd.conf | wc -l" = 1 ]; then
+if [ 'grep -w "# Timeout=3" /etc/zabbix/zabbix_agentd.conf | wc -l = 1' ]; then
   sed -i 's/# Timeout=3/Timeout=30/g' /etc/zabbix/zabbix_agentd.conf
-elif [ "grep -w "Timeout=3" /etc/zabbix/zabbix_agentd.conf | wc -l" = 1]; then
+elif [ 'grep -w "Timeout=3" /etc/zabbix/zabbix_agentd.conf | wc -l = 1' ]; then
   sed -i 's/Timeout=3/Timeout=30/g' /etc/zabbix/zabbix_agentd.conf
 fi
 #  echo "UserParameter=discovery.processosmemoria.linux[*],/bin/bash /home/scripts/discovertop5memory.sh $1 $2" >> /etc/zabbix/zabbix_agentd.conf
