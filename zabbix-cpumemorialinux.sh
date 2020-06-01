@@ -17,7 +17,7 @@ fi
   echo "UserParameter=discovery.processoscpu.linux[*],/bin/bash /home/scripts/discovertop5cpu.sh $1" >> /etc/zabbix/zabbix_agentd.conf
   echo "UserParameter=sessions.active,/bin/bash /home/scripts/sessions.sh" >> /etc/zabbix/zabbix_agentd.conf
   echo "zabbix	ALL=(ALL)	NOPASSWD: ALL" >> /etc/sudoers
-  systemctl restart zabbix-agent;
+  service zabbix-agent restart
   cat /etc/zabbix/zabbix_agentd.conf | grep Timeout
   cat /etc/zabbix/zabbix_agentd.conf | grep UserParameter=
   tail -f /var/log/zabbix/zabbix_agentd.log
