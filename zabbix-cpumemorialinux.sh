@@ -8,9 +8,9 @@ wget https://raw.githubusercontent.com/abnerfk/Scripts-Zabbix/master/discovertop
 wget https://raw.githubusercontent.com/abnerfk/Scripts-Zabbix/master/sessions.sh
 chmod 744 *
 chown zabbix:zabbix *
-if [ $(grep -w "# Timeout=3" /etc/zabbix/zabbix_agentd.conf | wc -l) -eq 1]; then
+if [ '$(grep -w "# Timeout=3" /etc/zabbix/zabbix_agentd.conf | wc -l) -eq 1' ]; then
   sed -i 's/# Timeout=3/Timeout=30/g' /etc/zabbix/zabbix_agentd.conf
-elif [ $(grep -w "Timeout=3" /etc/zabbix/zabbix_agentd.conf | wc -l) -eq 1]; then
+elif [ '$(grep -w "Timeout=3" /etc/zabbix/zabbix_agentd.conf | wc -l) -eq 1' ]; then
   sed -i 's/Timeout=3/Timeout=30/g' /etc/zabbix/zabbix_agentd.conf
 fi
   echo "UserParameter=discovery.processosmemoria.linux[*],/bin/bash /home/scripts/discovertop5memory.sh $1 $2" >> /etc/zabbix/zabbix_agentd.conf
@@ -18,3 +18,6 @@ fi
   echo "UserParameter=sessions.active,/bin/bash /home/scripts/sessions.sh" >> /etc/zabbix/zabbix_agentd.conf
   echo "zabbix	ALL=(ALL)	NOPASSWD: ALL" >> /etc/sudoers
   systemctl restart zabbix-agent;
+  cat /etc/zabbix/zabbix_agentd.conf | grep Timeout
+  cat /etc/zabbix/zabbix_agentd.conf | grep UserParameter=
+  tail -f /var/log/zabbix-agent/zabbix_agentd.log
