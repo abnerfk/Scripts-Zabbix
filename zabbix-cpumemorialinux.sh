@@ -20,4 +20,4 @@ fi
   systemctl restart zabbix-agent;
   cat /etc/zabbix/zabbix_agentd.conf | grep Timeout
   cat /etc/zabbix/zabbix_agentd.conf | grep UserParameter=
-  tail -f /var/log/zabbix-agent/zabbix_agentd.log
+  tail -f /var/log/zabbix/zabbix_agentd.log
