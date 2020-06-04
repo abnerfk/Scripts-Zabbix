@@ -20,4 +20,6 @@ fi
   service zabbix-agent restart
   cat /etc/zabbix/zabbix_agentd.conf | grep Timeout
   cat /etc/zabbix/zabbix_agentd.conf | grep UserParameter=
+  cat /etc/zabbix/zabbix_agentd.conf | grep Server=
+  cat /etc/zabbix/zabbix_agentd.conf | grep ServerActive=
   tail -f /var/log/zabbix/zabbix_agentd.log
