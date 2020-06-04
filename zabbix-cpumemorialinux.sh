@@ -3,9 +3,9 @@ mkdir /home/scripts
 chown zabbix:zabbix /home/scripts
 chmod 744 /home/scripts
 cd /home/scripts
-wget https://raw.githubusercontent.com/abnerfk/Scripts-Zabbix/master/discovertop5cpu.sh
-wget https://raw.githubusercontent.com/abnerfk/Scripts-Zabbix/master/discovertop5memory.sh
-wget https://raw.githubusercontent.com/abnerfk/Scripts-Zabbix/master/sessions.sh
+wget https://raw.githubusercontent.com/abnerfk/Scripts-Zabbix/master/Scripts/discovertop5cpu.sh
+wget https://raw.githubusercontent.com/abnerfk/Scripts-Zabbix/master/Scripts/discovertop5memory.sh
+wget https://raw.githubusercontent.com/abnerfk/Scripts-Zabbix/master/Scripts/sessions.sh
 chmod 744 *
 chown zabbix:zabbix *
 if [ $(grep -w "# Timeout=3" /etc/zabbix/zabbix_agentd.conf | wc -l) -eq 1 ]; then
