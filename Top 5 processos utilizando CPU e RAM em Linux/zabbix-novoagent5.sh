@@ -14,7 +14,6 @@ read hostname
   sed -i 's/Hostname=Zabbix server/Hostname=$hostname/g' /etc/zabbix/zabbix_agentd.conf
   sed -i 's/Server=127.0.0.1/Server=zabbix.2cloud.com.br/g' /etc/zabbix/zabbix_agentd.conf
   sed -i 's/ServerActive=127.0.0.1/ServerActive=zabbix.2cloud.com.br/g' /etc/zabbix/zabbix_agentd.conf
-  sed -i 's/# Timeout=3/Timeout=30/g' /etc/zabbix/zabbix_agentd.conf
   echo "zabbix	ALL=(ALL)	NOPASSWD: ALL" >> /etc/sudoers
   service zabbix-agent restart
   systemctl enable zabbix-agent
