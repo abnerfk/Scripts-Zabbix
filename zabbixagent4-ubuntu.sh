@@ -1,9 +1,9 @@
 #!/bin/bash
 cd /tmp
 wget https://repo.zabbix.com/zabbix/4.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.0-3+xenial_all.deb
-dpkg -i https://repo.zabbix.com/zabbix/4.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.0-3+xenial_all.deb
+dpkg -i zabbix-release_4.0-3+xenial_all.deb
 apt update
-apt install -y zabbix-agent
+apt-get -o Dpkg::Options::="--force-confnew" install zabbix-agent
 cd /etc/zabbix/zabbix_agentd.d
 wget https://raw.githubusercontent.com/abnerfk/Scripts-Zabbix/master/conf.d/2cloud-4.conf
 echo Insira o hostname do agent:
