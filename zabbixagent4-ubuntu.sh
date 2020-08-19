@@ -1,4 +1,9 @@
 #!/bin/bash
+cd /tmp
+wget https://repo.zabbix.com/zabbix/4.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.0-3+xenial_all.deb
+dpkg -i https://repo.zabbix.com/zabbix/4.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.0-3+xenial_all.deb
+apt update
+apt install -y zabbix-agent
 mkdir /home/scripts
 chown zabbix:zabbix /home/scripts
 chmod 744 /home/scripts
